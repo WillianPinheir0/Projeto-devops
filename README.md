@@ -1,2 +1,2 @@
-# Projeto-devops.
-Este é um projeto de prática para aprender GitHub e conceitos básicos de DevOps.
+"# Projeto-DevOps" 
+"Este projeto � para praticar GitHub e DevOps." 
