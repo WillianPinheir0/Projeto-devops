@@ -1,0 +1,19 @@
+name: CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      
+name: Checkout do repositório
+      uses: actions/checkout@v4
+
+      
+name: Simulação de Deploy
+      run: |
+        echo "Deploy do projeto realizado com sucesso!"
