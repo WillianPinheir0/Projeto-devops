@@ -1,16 +1,29 @@
-name: CD Pipeline
+name: CI Pipeline
+
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
-      - name: Simulação de Deploy
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Instalar dependências
         run: |
-          echo "Deploy do projeto realizado com sucesso!"
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt || true
+
+      - name: Rodar testes
+        run: |
+          python -m unittest discover -s testes -p "*.py"
