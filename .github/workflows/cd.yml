@@ -1,4 +1,4 @@
-name: CD Pipeline
+- name: CD Pipeline
 
 on:
   push:
@@ -10,10 +10,10 @@ jobs:
 
     steps:
       
-name: Checkout do repositório
+- name: Checkout do repositório
       uses: actions/checkout@v4
 
       
-name: Simulação de Deploy
+- name: Simulação de Deploy
       run: |
         echo "Deploy do projeto realizado com sucesso!"
